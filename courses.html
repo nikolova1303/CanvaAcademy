@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Курсове - Canva Academy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
+
+/* BACKGROUND */
+.background{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+background:
+radial-gradient(circle at 20% 20%,#00c4cc55,transparent 25%),
+radial-gradient(circle at 80% 40%,#8b5cf655,transparent 25%),
+radial-gradient(circle at 50% 80%,#06b6d455,transparent 25%);
+animation:bgMove 12s infinite alternate;
+}
+
+@keyframes bgMove{
+from{transform:scale(1);}
+to{transform:scale(1.3);}
+}
+
+/* NAV */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+position:sticky;
+top:0;
+background:rgba(15,23,42,.9);
+backdrop-filter:blur(10px);
+z-index:1000;
+transition:transform .3s ease, opacity .3s ease;
+}
+
+nav.hide{
+transform:translateY(-100%);
+opacity:0;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#00c4cc;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+}
+
+/* HERO */
+.hero{
+height:60vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.hero span{
+color:#00c4cc;
+}
+
+.hero p{
+font-size:1.1rem;
+opacity:.9;
+}
+
+/* SECTION */
+.section{
+padding:100px 10%;
+}
+
+/* INTRO (ОПРАВЕНО) */
+.intro{
+text-align:center;
+max-width:800px;
+margin:40px auto;
+line-height:1.8;
+}
+
+.intro p{
+font-size:1.15rem;
+opacity:.9;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:60px;
+}
+
+/* CARD */
+.course{
+background:#1e293b;
+padding:30px;
+border-radius:20px;
+transition:.4s;
+}
+
+.course:hover{
+transform:translateY(-10px);
+}
+
+.course h2{
+color:#00c4cc;
+margin-bottom:10px;
+}
+
+.course p{opacity:.9;}
+
+.course ul{
+margin-top:15px;
+padding-left:18px;
+opacity:.9;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:10px 20px;
+background:#8b5cf6;
+border-radius:10px;
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+/* FOOTER */
+footer{
+background:#111827;
+text-align:center;
+padding:40px;
+margin-top:80px;
+}
+
+footer h2{
+color:#00c4cc;
+margin-bottom:10px;
+}
+
+footer p{
+opacity:.8;
+}
+
+/* ANIMATION */
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+
+nav ul{
+flex-direction:column;
+gap:10px;
+}
+
+.hero{
+height:auto;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:2.2rem;
+}
+
+.section{
+padding:60px 6%;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<nav>
+<div class="logo">Canva Academy</div>
+
+<ul>
+<li><a href="index.html">Начало</a></li>
+<li><a href="courses.html">Курсове</a></li>
+<li><a href="about.html">За нас</a></li>
+<li><a href="contact.html">Контакти</a></li>
+</ul>
+</nav>
+
+<section class="hero hidden">
+<div class="hero-content">
+<h1>Нашите <span>Курсове</span></h1>
+<p>Практически обучения, които те учат да създаваш реални дизайни.</p>
+</div>
+</section>
+
+<div class="intro hidden">
+<p>
+Избери курс според твоето ниво и започни да учиш чрез практика, която изгражда реални умения.  
+Без излишна теория — само ясни стъпки и проекти, които можеш да приложиш веднага.
+</p>
+</div>
+
+<div style="text-align: center; margin: 20px auto; max-width: 500px; padding: 0 20px;">
+    <input type="text" id="courseSearch" placeholder="Търси курс (напр. лого, видео)..." style="width: 100%; padding: 15px 20px; border-radius: 30px; border: 2px solid #8b5cf6; background: #1e293b; color: white; font-size: 1rem; outline: none; transition: 0.3s;">
+</div>
+
+<section class="section">
+<div class="grid">
+
+<div class="course hidden">
+<h2>🎨 Canva Основи</h2>
+<p>Започни от нулата и научи интерфейса.</p>
+<ul>
+<li>Шаблони</li>
+<li>Текст и изображения</li>
+<li>Експорт</li>
+</ul>
+<a class="btn" href="lesson1.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>🚀 Дизайн на лого</h2>
+    <p>Създавай уникални лога за фирми, брандове и лични проекти.</p>
+    <ul>
+        <li>Типография</li>
+        <li>Икони и символи</li>
+        <li>Практически упражнения</li>
+    </ul>
+    <a class="btn" href="lesson2.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>🎨 Направи свой флаер</h2>
+    <p>Създай цветни и забавни флаери лесно с Canva.</p>
+    <ul>
+        <li>Красиви шаблони</li>
+        <li>Снимки и икони</li>
+        <li>Лесен дизайн</li>
+    </ul>
+    <a class="btn" href="lesson3.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>📊 Създаване на презентация</h2>
+    <p>Научи как да правиш интересни и професионални презентации.</p>
+    <ul>
+        <li>Подредба на слайдове</li>
+        <li>Добавяне на изображения</li>
+        <li>Дизайн в Canva</li>
+    </ul>
+    <a class="btn" href="lesson4.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>💻 Моят първи уебсайт</h2>
+    <p>Създай собствен уебсайт и покажи своите идеи на света.</p>
+    <ul>
+        <li>Лесен дизайн</li>
+        <li>Снимки и цветове</li>
+        <li>Публикуване в интернет</li>
+    </ul>
+    <a class="btn" href="lesson5.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>📱 Публикация за социални мрежи</h2>
+    <p>Научи как да създаваш интересни публикации за Instagram, Facebook и TikTok.</p>
+    <ul>
+        <li>Добавяне на снимки</li>
+        <li>Избор на цветове</li>
+        <li>Атрактивен дизайн</li>
+    </ul>
+    <a class="btn" href="lesson6.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>🎬 Кратко видео</h2>
+    <p>Създавай кратки и забавни видеа с ефекти и музика.</p>
+    <ul>
+        <li>Редактиране на видео</li>
+        <li>Добавяне на текст</li>
+        <li>Анимации и преходи</li>
+    </ul>
+    <a class="btn" href="lesson7.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>🖼️ Създаване на плакат</h2>
+    <p>Направи красиви плакати за училищни проекти и събития.</p>
+    <ul>
+        <li>Подредба на елементи</li>
+        <li>Избор на изображения</li>
+        <li>Работа с шаблони</li>
+    </ul>
+    <a class="btn" href="lesson8.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>🎫 Покана за събитие</h2>
+    <p>Създай стилни покани за рожден ден, празник или училищно събитие.</p>
+    <ul>
+        <li>Красиви дизайни</li>
+        <li>Добавяне на информация</li>
+        <li>Персонализиране на поканата</li>
+    </ul>
+    <a class="btn" href="lesson9.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>📚 Корица на книга</h2>
+    <p>Научи как да създаваш впечатляващи корици за книги и проекти.</p>
+    <ul>
+        <li>Избор на изображения</li>
+        <li>Работа с текст</li>
+        <li>Професионален дизайн</li>
+    </ul>
+    <a class="btn" href="lesson10.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>📰 Училищен вестник</h2>
+    <p>Създай собствен училищен вестник с новини, снимки и интересни статии.</p>
+    <ul>
+        <li>Оформление на страници</li>
+        <li>Добавяне на снимки</li>
+        <li>Подготовка за печат</li>
+    </ul>
+    <a class="btn" href="lesson11.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>👕 Дизайн на мърч</h2>
+    <p>Създавай уникални щампи за тениски, суичъри и аксесоари.</p>
+    <ul>
+        <li>Създаване на графики</li>
+        <li>Работа с прозрачен фон</li>
+        <li>Подготовка за печат</li>
+    </ul>
+    <a class="btn" href="lesson12.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>🎮 Банер за YouTube канал</h2>
+    <p>Създай професионална корица за своя канал, която изглежда добре на всяко устройство.</p>
+    <ul>
+        <li>Правилни размери за ТВ, компютър и телефон</li>
+        <li>Позициониране на важните елементи</li>
+        <li>Съчетаване с логото на канала</li>
+    </ul>
+    <a class="btn" href="lesson13.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>📇 Дизайн на визитка</h2>
+    <p>Създай стилни и професионални визитки, които правят отлично първо впечатление.</p>
+    <ul>
+        <li>Двустранно оформление</li>
+        <li>Подредба на контактна информация</li>
+        <li>Избор на размери и подготовка за печат</li>
+    </ul>
+    <a class="btn" href="lesson14.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>✨ Дигитални стикери</h2>
+    <p>Направи забавни стикери за Viber, WhatsApp, Telegram или за дигитални планери.</p>
+    <ul>
+        <li>Илюстриране на забавни фрази</li>
+        <li>Изрязване по контур</li>
+        <li>Качване в чат платформи</li>
+    </ul>
+    <a class="btn" href="lesson15.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>📜 Дизайн на дипляна</h2>
+    <p>Научи се да създаваш професионални трикрилни брошури за реклама и събития.</p>
+    <ul>
+        <li>Правилно разпределение по страници</li>
+        <li>Подредба на текст и графики</li>
+        <li>Определяне на линии за сгъване и печат</li>
+    </ul>
+    <a class="btn" href="lesson16.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>☕ Дизайн на чаши</h2>
+    <p>Създавай уникални и забавни дизайни за персонализирани порцеланови чаши.</p>
+    <ul>
+        <li>Определяне на точните размери за печат</li>
+        <li>Позициониране на щампата от двете страни</li>
+        <li>Работа с цветове и ефектни надписи</li>
+    </ul>
+    <a class="btn" href="lesson17.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>📊 Училищен доклад</h2>
+    <p>Научи се да оформяш дълги текстови проекти, реферати и доклади по ясен и структуриран начин.</p>
+    <ul>
+        <li>Създаване на автоматично съдържание</li>
+        <li>Форматиране на текст, полета и параграфи</li>
+        <li>Вмъкване на таблици, източници и графики</li>
+    </ul>
+    <a class="btn" href="lesson18.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>💻 Уебсайт Mockup</h2>
+    <p>Научи се да визуализираш идеите си за уебсайтове и приложения, преди да започнеш коденето.</p>
+    <ul>
+        <li>Структуриране на уеб страници (Wireframes)</li>
+        <li>Създаване на реалистични макети на екрани</li>
+        <li>Презентиране на дизайна в лаптоп и телефон</li>
+    </ul>
+    <a class="btn" href="lesson19.html">Започни</a>
+</div>
+
+<div class="course hidden">
+    <h2>📝 Помагало за бърз преговор</h2>
+    <p>Научи се да събираш най-важните формули, правила и дати в прегледен и удобен Cheat Sheet.</p>
+    <ul>
+        <li>Синтезиране на цял учебен материал в една страница</li>
+        <li>Използване на таблици, цветни блокове и съкращения</li>
+        <li>Оформление, удобно за преглед през телефон или за печат</li>
+    </ul>
+    <a class="btn" href="lesson20.html">Започни</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+<h2>Canva Academy</h2>
+<p>© 2026 Всички права запазени</p>
+</footer>
+
+<script>
+
+/* animation */
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".hidden").forEach(el=>{
+observer.observe(el);
+});
+
+/* NAV hide on scroll */
+let lastScroll = 0;
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+const currentScroll = window.pageYOffset;
+
+if(currentScroll > lastScroll && currentScroll > 80){
+nav.classList.add("hide");
+}else{
+nav.classList.remove("hide");
+}
+
+lastScroll = currentScroll;
+});
+
+/* Търсене в реално време */
+const searchInput = document.getElementById("courseSearch");
+const courses = document.querySelectorAll(".course");
+
+searchInput.addEventListener("input", (e) => {
+    const searchText = e.target.value.toLowerCase().trim();
+
+    courses.forEach(course => {
+        const title = course.querySelector("h2").textContent.toLowerCase();
+        const description = course.querySelector("p").textContent.toLowerCase();
+
+        if (title.includes(searchText) || description.includes(searchText)) {
+            course.style.display = "";
+            course.classList.add("show");
+        } else {
+            course.style.display = "none";
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>
